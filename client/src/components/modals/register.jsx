@@ -43,7 +43,6 @@ export default function RegisterModal({ show, handleClose }) {
             formData.append("password", form.password);
             formData.append("greeting", form.greeting);
             formData.append("image", form.image[0], form.image[0].name);
-            formData.append("art", form.art[0], form.art[0].name)
 
             const response = await API.post("/register", formData);
 
@@ -131,15 +130,6 @@ export default function RegisterModal({ show, handleClose }) {
                             {previewAvatar && (
                             <div>
                                 <img src={previewAvatar} className="w-[100px] h-[100px] rounded-full" alt={"ini alt"}/>
-                            </div>
-                            )}
-                            <div>
-                            <Label htmlFor="art" >Upload Your Art</Label>
-                            <input className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="art" id="art" name="art" type="file" onChange={handleChange}/>
-                            </div>
-                            {previewArt && (
-                            <div>
-                                <img src={previewArt} style={{maxWidth: "150px", maxHeight: "150px", objectFit: "cover",}} alt={"ini alt"}/>
                             </div>
                             )}
 

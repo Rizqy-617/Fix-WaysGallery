@@ -21,7 +21,7 @@ export default function DetailPost() {
       <div className="py-8 max-w-screen-lg mx-auto">
         <div className="w-full flex items-center justify-between">
           <div className="flex items-center gap-5">
-            <Link to={`/details-user/${detailPost?.user.ID}`}>
+            <Link to={`/details-user/${detailPost?.user.id}`}>
               <Avatar img={detailPost?.user.image} rounded={true} size="md"/>
             </Link>
             <div>
