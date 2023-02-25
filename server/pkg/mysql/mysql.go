@@ -27,7 +27,7 @@ func DatabaseInit() {
 	fmt.Println(DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_DATABASENAME)
 
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("error di mysql go", err)
 	}
 
 	fmt.Println("Connected to Database")
