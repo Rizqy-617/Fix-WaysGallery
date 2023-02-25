@@ -1,6 +1,6 @@
-## TECH STACK
+# TECH STACK
 
-# FRONTEND
+## FRONTEND
   - HTML
   - CSS
   - Javascript
@@ -8,8 +8,8 @@
   - Tailwind CSS
   - Flowbite
   - Plock
-  
-# Backend
+
+## Backend
   - Golang
   - Echo
   - MySQL
