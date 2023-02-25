@@ -10,7 +10,7 @@ export default function Navbars() {
   const [state, dispatch] = useContext(AppContext)
 
   const { data: dataNavbar } = useQuery("datanavbarcache", async () => {
-    const response = await API.get("/user/" + state.user.ID)
+    const response = await API.get("/user/" + state.user.id)
     return response.data.data
   })
 
