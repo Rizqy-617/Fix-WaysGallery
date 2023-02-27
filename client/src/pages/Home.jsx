@@ -18,6 +18,7 @@ export default function HomePage() {
     return item.post_image[0];
   }) : [];
 
+  
   return (
     <>
       <Navbars />
@@ -57,7 +58,7 @@ export default function HomePage() {
             {post?.map((item) => (
               <Link to={`/detail/${item?.id}`} key={item?.id}>
                 {item.post_image?.map((img, index) => (
-                    <img key={index} src={img.image} className="w-full rounded-md hover:shadow-lg hover:shadow-green-500 hover:transition-shadow hover:ease-in-out" alt="thumbnail" />
+                    <img key={index} src={img.image} className="w-full shadow-sm shadow-stone-300 rounded-md hover:shadow-lg hover:shadow-green-500 hover:transition-shadow hover:ease-in-out" alt="thumbnail" />
                 )).shift()}
               </Link>
             ))}
