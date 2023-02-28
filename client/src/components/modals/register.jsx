@@ -144,7 +144,7 @@ export default function RegisterModal({ show, handleClose }) {
                                 className="px-4 py-2 mt-3 rounded-md text-white font-medium bg-[#2FC4B2] text-xs lg:text-sm"
                                 disabled="loading"
                             >
-                                {loading ? <Roller /> : "Register"}
+                                {loading ? "Register" : <Roller />}
                             </button>
                         </form>
                         <p className="text-xs text-center mt-4">

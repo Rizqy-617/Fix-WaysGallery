@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Roller } from "react-awesome-spinners";
 
 
 export default function LoginModal({ show, handleClose }) {
@@ -118,7 +119,7 @@ export default function LoginModal({ show, handleClose }) {
                           className="px-4 py-2 mt-3 rounded-md text-white font-medium bg-[#2FC4B2] text-xs lg:text-sm"
                           disabled="loading"
                       >
-                          {loading ? <Roller /> : "Login"}
+                          {loading ? "Login" : <Roller />}
                       </button>
                   </form>
                   <p className="text-xs text-center mt-4">
