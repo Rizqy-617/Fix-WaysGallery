@@ -29,9 +29,9 @@ export default function LoginModal({ show, handleClose }) {
   };
 
   const handleSubmit = useMutation(async (e) => {
+    setLoading(true);
     try {
       e.preventDefault();
-      setLoading(true);
 
       const config = {
         headers: {

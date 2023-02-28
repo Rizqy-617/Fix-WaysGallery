@@ -35,9 +35,9 @@ export default function RegisterModal({ show, handleClose }) {
 	};
 
     const handleSubmit = useMutation(async (e) => {
+        setLoading(true);
         try {
             e.preventDefault();
-            setLoading(true);
 
             const formData = new FormData();
 
