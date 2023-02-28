@@ -3,13 +3,11 @@ import { Alert, Label, Modal, TextInput } from "flowbite-react";
 import { useMutation } from "react-query";
 import { API } from "../../config/api";
 import Swal from "sweetalert2";
-import { Roller } from "react-awesome-spinners";
 
 export default function RegisterModal({ show, handleClose }) {
 
     const [previewAvatar, setPreviewAvatar] = useState(null);
     const [previewArt, setPreviewArt] = useState(null)
-    const [loading, setLoading] = useState(false)
 
     const [form, setForm] = useState({
         fullname: "",
@@ -35,7 +33,6 @@ export default function RegisterModal({ show, handleClose }) {
 	};
 
     const handleSubmit = useMutation(async (e) => {
-        setLoading(true);
         try {
             e.preventDefault();
 
@@ -48,8 +45,6 @@ export default function RegisterModal({ show, handleClose }) {
             formData.append("image", form.image[0], form.image[0].name);
 
             const response = await API.post("/register", formData);
-
-            setLoading(false)
 
             if (response.status === 200) {
                 Swal.fire({
@@ -75,7 +70,6 @@ export default function RegisterModal({ show, handleClose }) {
             }
         } catch (error) {
             console.log(error);
-            setLoading(false)
         }
     });  
 
@@ -142,9 +136,8 @@ export default function RegisterModal({ show, handleClose }) {
                             <button
                                 type="submit"
                                 className="px-4 py-2 mt-3 rounded-md text-white font-medium bg-[#2FC4B2] text-xs lg:text-sm"
-                                disabled="loading"
                             >
-                                {loading ? "Register" : <Roller />}
+                                Register
                             </button>
                         </form>
                         <p className="text-xs text-center mt-4">
