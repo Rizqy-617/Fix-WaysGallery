@@ -7,7 +7,6 @@ import { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Roller } from "react-awesome-spinners";
 
 
 export default function LoginModal({ show, handleClose }) {
