@@ -13,6 +13,7 @@ export default function LoginModal({ show, handleClose }) {
   const navigate = useNavigate();
   const [state, dispacth] = useContext(AppContext);
   const [alert, setAlert] = useState();
+  const [loading, setLoading] = useState(false)
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -30,6 +31,7 @@ export default function LoginModal({ show, handleClose }) {
   const handleSubmit = useMutation(async (e) => {
     try {
       e.preventDefault();
+      setLoading(true);
 
       const config = {
         headers: {
@@ -40,6 +42,7 @@ export default function LoginModal({ show, handleClose }) {
       const body = JSON.stringify(form);
 
       const response = await API.post("/login", body, config)
+      setLoading(false)
 
       if (response.status === 200) {
         Swal.fire({
@@ -69,6 +72,7 @@ export default function LoginModal({ show, handleClose }) {
     }
     } catch (error) {
       console.log(error)
+      setLoading(false)
     }
   })
 
@@ -112,8 +116,9 @@ export default function LoginModal({ show, handleClose }) {
                       <button
                           type="submit"
                           className="px-4 py-2 mt-3 rounded-md text-white font-medium bg-[#2FC4B2] text-xs lg:text-sm"
+                          disabled="loading"
                       >
-                          Login
+                          {loading ? <Roller /> : "Login"}
                       </button>
                   </form>
                   <p className="text-xs text-center mt-4">
