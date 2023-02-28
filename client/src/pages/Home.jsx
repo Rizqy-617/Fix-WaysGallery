@@ -54,7 +54,7 @@ export default function HomePage() {
 
         <div className="pt-8 font-medium">
           <h1 className="mb-4">today's post</h1>
-          <Plock nColumns={3} gap={10}>
+          <Plock nColumns={3} gap={15}>
             {post?.map((item) => (
               <Link to={`/detail/${item?.id}`} key={item?.id}>
                 {item.post_image?.map((img, index) => (
